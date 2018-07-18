@@ -2,8 +2,16 @@
 
 
 
-// so it seems like, this is where you do a connection and make sure your connection is successful then use it everywhere else, since you'll probably have a lot of routes.
 
+const { Client } = require('pg')
+const client = new Client()
+
+client.connect()
+
+client.query('SELECT $1::text as message', ['Hello world!'], (err, res) => {
+  console.log(err ? err.stack : res.rows[0].message) // Hello World!
+  client.end()
+})
 
 
 

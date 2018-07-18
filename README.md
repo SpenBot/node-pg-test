@@ -48,7 +48,7 @@ node postgres test
 > config_local.sh - is that max connection pools?
 > not sure whats happening in config.js, why !function()
 
-
+> so it seems like, db is where you do a connection and make sure your connection is successful then use it everywhere else, since you'll probably have a lot of routes.
 
 
 

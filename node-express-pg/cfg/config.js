@@ -11,7 +11,7 @@
     console.log('\n\t *** running config start *** \n')
 
     for (key in cfg) {
-        console.log(key + ': ' + cfg[key])
+        console.log(`\t ${key}: ${cfg[key]}`)
     }
 
     console.log('\n\t *** running config end *** \n')
