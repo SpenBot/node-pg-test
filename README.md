@@ -41,6 +41,7 @@ node postgres test
   $ npm install cors
   $ npm install pg
 
+  $ source ./cfg/config_local.sh
 
 # QUESTIONS
 

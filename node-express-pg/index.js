@@ -17,19 +17,13 @@ app.use(cors())
 //////// START SERVER ON ENVIRONMENT PORT ////////
 
 // set port based on environment
-// app.set('port', process.env.PORT || 4000)
-
-// set port based on environment
 const port = config.PORT
 app.set('port', port)
 
-// app.listen(app.get('port'), () => {
-//   console.log(`\n\t Server listening on port : ${app.get('port')}. \n`)
-// })
-
 app.listen(app.get('port'), () => {
-  console.log(`\n\t Server running on port : ${app.get('port')}. \n`)
+  console.log(`\n\t Server running on port:${app.get('port')} \n`)
 })
+
 
 
 
@@ -44,9 +38,4 @@ app.use('/', membersRoutes)
 
 
 
-
-
-
-
-
-//// EXPRESS TEST /////////////////////////////////////////////////////////////
+// END
