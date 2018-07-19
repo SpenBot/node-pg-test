@@ -38,10 +38,10 @@
 
     - I highly installing nodemon globally to use to run node servers.
     - it allows hot-refreshes, meaning it will re-start the server every time you save changes in your text-editor.  
-    ```
-          $ npm install -g nodemon
-          $ nodemon index.js
-    ```
+```
+      $ npm install -g nodemon
+      $ nodemon index.js
+```
 
 
 
