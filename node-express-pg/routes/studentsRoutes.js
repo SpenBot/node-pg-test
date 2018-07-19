@@ -8,6 +8,7 @@ const pool = require('../db/connection')
 
 //////// ROUTE CONTROLLER FUNCTIONS ////////
 
+
 // GET ALL
 router.get('/api/students', (req, res) => {
   pool.query('SELECT * FROM students')
@@ -40,12 +41,8 @@ router.put('/api/students/:id', (req, res) => {
 
   console.log(req.body)
 
-  pool.query(`UPDATE students SET
-    first_name = ${req.body.first_name},
-    last_name = ${req.body.last_name},
-    grade = ${req.body.grade},
-    email = ${req.body.email}
-    WHERE id = ${req.params.id}`
+  pool.query('UPDATE students SET first_name = $1, last_name = $2, grade = $3, email = $4, WHERE id = $5',
+    [req.body.first_name, req.body.last_name, req.body.grade, req.body.email, req.params.id]
   )
     .catch(err => console.log(err))
     .then((data) => res.json(data.rows))
@@ -62,10 +59,10 @@ router.delete('/api/students/:id', (req,res) => {
 })
 
 
+
 //////// EXPORT MODULES ////////
 
 module.exports = router
-
 
 
 

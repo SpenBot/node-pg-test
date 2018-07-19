@@ -1,12 +1,26 @@
 .students-component {
-  margin: 20px 100px;
-  background-color: gray;
+  margin: 20px 130px;
 }
 
-.students-li
- {
+.students-cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background-color: rgb(235, 235, 235)
+}
+
+.students-li {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
- }
+   padding: 0 40px;
+   border-top: solid 1px rgb(220, 220, 220);
+}
+
+.students-li:hover {
+  background-color: rgb(240, 245, 255);
+  cursor: pointer;
+}
