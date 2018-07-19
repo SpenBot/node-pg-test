@@ -21,17 +21,17 @@ const port = config.PORT
 app.set('port', port)
 
 app.listen(app.get('port'), () => {
-  console.log(`\n\t Server running on port:${app.get('port')} \n`)
+  console.log(`\n\t Node-Postgres Server Running On PORT:${app.get('port')}`)
 })
 
 
 
+/////// ROUTES ////////
 
-//// ROUTES ///////////////////////////////////////////////////////////////////
+const studentsRoutes = require('./routes/studentsRoutes')
 
-const membersRoutes = require('./routes/membersRoutes')
-
-app.use('/', membersRoutes)
+app.use('/', studentsRoutes)
+// app.use('/', coursesRoutes)
 
 
 

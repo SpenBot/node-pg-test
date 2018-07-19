@@ -8,13 +8,13 @@
       MAX_CON: process.env.MAX_CON
     }
 
-    console.log('\n\t *** running config start *** \n')
+    console.log('\n\n\t Environment Variables Configurations :')
 
     for (key in cfg) {
-        console.log(`\t ${key}: ${cfg[key]}`)
+        console.log(`\t\t ${key}: ${cfg[key]}`)
     }
 
-    console.log('\n\t *** running config end *** \n')
+    // console.log('\n\t *** running config end *** \n')
 
     module.exports = cfg
 })()
