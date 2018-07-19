@@ -6,8 +6,8 @@ const pool = require('../db/connection')
 
 
 
-//////// ROUTE CONTROLLER FUNCTIONS ////////
 
+//////// ROUTE CONTROLLER FUNCTIONS ////////
 
 // GET ALL
 router.get('/api/students', (req, res) => {

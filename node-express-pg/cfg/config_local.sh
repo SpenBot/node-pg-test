@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # port to start node server on
 PORT=3000
 export PORT
