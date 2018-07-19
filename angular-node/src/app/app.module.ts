@@ -5,16 +5,22 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './components/students/students.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { StudentDetailComponent } from './components/student-detail/student-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent
+    StudentsComponent,
+    HomepageComponent,
+    StudentDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

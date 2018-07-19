@@ -1,6 +1,21 @@
 # node-pg-test
 node postgres test
 
+# START UP
+
+## Setting Up Local PostGres (on linux) :
+-
+
+## Starting the Node-Express-PostGres Backend :
+- cd into the node-express-directory, and set the configuration file
+```
+$ source ./cfg/config_local.sh
+```
+- run the server
+```
+node index.js
+```
+
 # PLAN
 
 - set up a local postgres

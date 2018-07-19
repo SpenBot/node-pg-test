@@ -1,5 +1,5 @@
 .students-component {
-  margin: 20px 130px;
+  margin: 30px 130px;
 }
 
 .students-cols {
@@ -11,16 +11,32 @@
   background-color: rgb(235, 235, 235)
 }
 
+.students-results {
+  min-height: 0px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.students-results::-webkit-scrollbar {
+  background-color: rgb(200, 200, 200);
+}
+
+.students-results::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .4);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5)
+}
+
 .students-li {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
    padding: 0 40px;
-   border-top: solid 1px rgb(220, 220, 220);
+   border-bottom: solid 1px rgb(220, 220, 220);
 }
 
 .students-li:hover {
-  background-color: rgb(240, 245, 255);
+  background-color: rgb(235, 245, 255);
   cursor: pointer;
 }
