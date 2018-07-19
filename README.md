@@ -1,6 +1,3 @@
-# node-pg-test
-node postgres test
-
 # START UP
 
 ### Setting Up Local PostGres (on linux) :
@@ -11,38 +8,45 @@ node postgres test
 ### Starting the Node-Express-PostGres Backend :
 - cd into the n-e-p directory, and set the configuration file (you may need to do $ npm install)
 ```
-$ source ./cfg/config_local.sh
+  $ source ./cfg/config_local.sh
 ```
 - run the server
 ```
-$ node index.js
+  $ node index.js
 ```
 
 ### Running Angular-Node
 - cd into the a-n directory
 ```
-$ ng serve
+  $ ng serve
 ```
 
 
 # PLAN
 
 - set up a local postgres
-- populate postgres data
+- populate postgres dummy data
+
 
 - build node service
 - connect to postgres
 - build CRUD REST routes
 
+
 - build angular front-end and test CRUD functionality.
+
 
 - add join table
 - add seed files and data, with users
-- add models
-- confirm connection pool issues
+- handle validations
+- handle merges?
+- add models to backend?
+- confirm connection pool stability, and database security
+
 
 - deploy postgres
 - deploy node and angular
+
 
 - build docker container/images
 - use openshift to deploy docker container with github webhook
