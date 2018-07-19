@@ -1,22 +1,22 @@
 # START UP
 
 ### Setting Up Local PostGres (on linux) :
-install postgres
-sign in to postgres as default user
-run seed data sql file
+  - install postgres
+  - sign in to postgres as default user
+  - run seed data sql file
 
 ### Starting the Node-Express-PostGres Backend :
-cd into the n-e-p directory, and set the configuration file (you may need to do $ npm install)
+  - cd into the n-e-p directory, and set the configuration file (you may need to do $ npm install)
 ```
       $ source ./cfg/config_local.sh
 ```
-run the server
+  - run the server
 ```
       $ node index.js
 ```
 
 ### Running Angular-Node
-cd into the a-n directory
+  - cd into the a-n directory
 ```
       $ ng serve
 ```
