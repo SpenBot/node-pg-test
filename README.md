@@ -80,6 +80,10 @@ node postgres test
 
 # QUESTIONS
 
+> various angular stuff
+
+https://github.com/angular/angular/issues/20355
+
 > whats the difference between client and pool
 
 > use asynch, to manage pools

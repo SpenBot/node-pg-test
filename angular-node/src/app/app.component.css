@@ -1,0 +1,29 @@
+
+/* HEADER */
+
+header {
+  background-color: rgb(92, 162, 255);
+  color: white;
+  padding: 20px 0 10px 30px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 40px;
+}
+
+nav a:hover{
+  background-color: white;
+  color: rgb(92, 162, 255);
+}
+
+h1 {
+  margin: 0;
+}
