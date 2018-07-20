@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { Student } from '../../models/student/student'
 
 //////// IMPORT SERVICES /////////
-import { StudentsService } from '../../services/students.service'
+import { StudentsService } from '../../services/students-service/students.service'
 
 
 

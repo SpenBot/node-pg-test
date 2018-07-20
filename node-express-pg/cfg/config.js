@@ -1,5 +1,4 @@
 !(function() {
-    let key = ''
 
     // setting environment variables
     const cfg = {
@@ -10,11 +9,9 @@
 
     console.log('\n\n\t Environment Variables Configurations :')
 
-    for (key in cfg) {
+    for (let key in cfg) {
         console.log(`\t\t ${key}: ${cfg[key]}`)
     }
-
-    // console.log('\n\t *** running config end *** \n')
 
     module.exports = cfg
 })()

@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { StudentsComponent } from './components/students/students.component';
