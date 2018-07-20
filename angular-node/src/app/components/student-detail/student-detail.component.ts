@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
 
 //////// IMPORT SCHEMA CLASSES /////////
-import { Student } from '../students/student/student'
+import { Student } from '../../models/student/student'
 
 //////// IMPORT SERVICES /////////
 import { StudentsService } from '../../services/students.service'

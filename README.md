@@ -38,7 +38,7 @@
 
 ### Running Angular-Node
 
-  - cd into the a-n directory
+  - cd into the a-n directory (again $ npm install)
 ```
       $ ng serve
 ```

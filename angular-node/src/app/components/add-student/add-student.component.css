@@ -1,6 +1,6 @@
 /* COMPONENT */
 
-.students-details-comp{
+.add-student-comp{
   margin: 30px auto 0px;
   width: 380px;
 }
@@ -62,10 +62,10 @@
   box-shadow: 3px 3px 3px rgb(180, 180, 180);
 }
 
-.save {
-  background-color: orange;
+.add {
+  background-color: rgb(95, 153, 255);
 }
 
-.delete {
+.cancel {
   background-color: red;
 }

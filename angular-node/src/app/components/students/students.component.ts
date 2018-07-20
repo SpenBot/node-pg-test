@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //////// IMPORT SCHEMA CLASSES /////////
-import { Student } from './student/student'
+import { Student } from '../../models/student/student'
 
 //////// IMPORT SERVICES /////////
 import { StudentsService } from '../../services/students.service'
@@ -37,10 +37,17 @@ export class StudentsComponent implements OnInit {
   //// GET STUDENTS ////
   getStudents () : void {
     this.studentsService.getStudents()
-    .subscribe(students => {
-      this.students = students
-    })
+      .subscribe(students => {
+        this.students = students
+      })
   }
+
+  // clickAdd () : void {
+  //   this.studentsService.addStudent()
+  //     .subscribe(student => {
+  //       console.log(student)
+  //     })
+  // }
 
 }
 

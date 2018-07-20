@@ -5,6 +5,17 @@
   width: 800px;
 }
 
+/* COMPONENT HEADER */
+
+.students-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+
 /* COLUMNS LABEL */
 
 .students-cols {
@@ -13,6 +24,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
+  height: 32px;
   background-color: rgb(235, 235, 235)
 }
 
@@ -51,6 +63,32 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+/* BUTTONS */
+
+.add-button {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 5px;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: orange;
+}
+
+.add-button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  box-shadow: 3px 3px 3px rgb(180, 180, 180);
+}
+
+
+
+
+
+
+
 
 
 

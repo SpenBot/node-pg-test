@@ -26,8 +26,6 @@ router.get('/api/students/:id', (req, res) => {
 // CREATE
 router.post('/api/students', (req, res) => {
 
-  console.log(req.body)
-
   pool.query('INSERT INTO students (first_name, last_name, grade, email) VALUES ($1, $2, $3, $4)',
     [req.body.first_name, req.body.last_name, req.body.grade, req.body.email]
   )
@@ -43,7 +41,7 @@ router.put('/api/students/:id', (req, res) => {
     [req.body.first_name, req.body.last_name, req.body.grade, req.body.email, req.params.id]
   )
     .catch(err => console.log(err))
-    .then((data) => res.json(data.rows))
+    .then((data) =>  res.json(data.rows))
 
 })
 

@@ -6,8 +6,7 @@ import { HttpClient } from '@angular/common/http'
 import { environment } from '../../environments/environment'
 
 //////// IMPORT COMPONENTS /////////
-import { StudentsComponent } from '../components/students/students.component'
-import { Student } from '../components/students/student/student'
+import { Student } from '../models/student/student'
 
 
 //////// INJECTION DECORATOR ///////

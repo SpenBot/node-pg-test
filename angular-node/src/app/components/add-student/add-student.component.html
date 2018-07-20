@@ -1,13 +1,10 @@
-<div *ngIf="student" class="students-details-comp">
+<div class="add-student-comp">
 
-  <h3> Edit Student </h3>
+
+  <h3> Add New Student </h3>
 
   <div class="all-forms">
 
-    <div class="form-input">
-      <label for="id"> ID : </label>
-      <input [(ngModel)]="student.id" name="id" style="background-color:lightgray;"disabled>
-    </div>
     <div class="form-input">
       <label for="name"> FIRST NAME : </label>
       <input [(ngModel)]="student.first_name" name="first_name">
@@ -27,11 +24,9 @@
 
   </div>
 
-
   <div class="all-buttons">
-    <div class="form-button save" (click)="clickSave()"> SAVE CHANGES </div>
-    <div class="form-button delete" (click)="clickDelete()"> DELETE </div>
+    <div class="form-button add" (click)="clickAdd()"> ADD STUDENT </div>
+    <div class="form-button cancel" routerLink="/students"> CANCEL </div>
   </div>
-
 
 </div>
