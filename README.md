@@ -13,7 +13,7 @@
       # CREATE DATABASE node_test_db;
       # \c node_test_db
 ```
-  - run script (<path-from-your-root>/node-express-pg/db/seeds/seeds.js)
+  - run script with full path, which can be copied by right clicking on your text-editor usually.
 ```  
       # \i <full-path-to-seeds.js>;
 ```

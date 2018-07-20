@@ -1,6 +1,6 @@
 ///////// IMPORT DEPENDENCIES ////////
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 //////// IMPORT SCHEMA CLASSES /////////
 import { Student } from '../students/student/student'
@@ -25,6 +25,7 @@ export class StudentDetailComponent implements OnInit {
   //// CONSTRUCTOR ////
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private studentsService : StudentsService
   ) { }
 
@@ -59,8 +60,9 @@ export class StudentDetailComponent implements OnInit {
   //// CLICK DELETE ////
   clickDelete () : void {
   this.studentsService.deleteStudent(this.student.id)
-    .subscribe(student => {
-      alert(`Deleted Student : ${student.id} - ${student.first_name} ${student.last_name}`)
+    .subscribe( () => {
+      alert(`Deleted Student : ${this.student.id} - ${this.student.first_name} ${this.student.last_name}`)
+      this.router.navigate(['students'])
     })
   }
 

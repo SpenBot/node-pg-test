@@ -49,6 +49,7 @@
 .students-li:hover {
   background-color: rgb(235, 245, 255);
   cursor: pointer;
+  text-decoration: underline;
 }
 
 

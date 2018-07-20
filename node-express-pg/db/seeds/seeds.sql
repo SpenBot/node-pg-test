@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS students;
+
 CREATE TABLE students (id SERIAL PRIMARY KEY, first_name VARCHAR NOT NULL, last_name VARCHAR NOT NULL, grade integer NOT NULL, email VARCHAR NOT NULL UNIQUE);
 
 INSERT INTO students (first_name, last_name, grade, email) VALUES ('Luke', 'Skywalker', 4, 'luke@mail.com');
