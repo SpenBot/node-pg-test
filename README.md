@@ -2,8 +2,6 @@
 
 ### Setting Up Local PostGres (on linux) :
 
-  - THIS WILL BE UPDATED WITH A SCRIPT SOON!
-
   - sign in to postgres as default user (from the root of you OS, I think)
 ```
       $ sudo -u postgres psql postgres
