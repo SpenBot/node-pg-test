@@ -20,7 +20,7 @@ router.get('/api/students', (req, res) => {
 router.get('/api/students/:id', (req, res) => {
   pool.query('SELECT * FROM students WHERE id = $1', [req.params.id])
     .catch(err => console.log(err))
-    .then((data) => res.json(data.rows))
+    .then((data) => res.json(data.rows[0]))
 })
 
 // CREATE
@@ -41,7 +41,7 @@ router.put('/api/students/:id', (req, res) => {
 
   console.log(req.body)
 
-  pool.query('UPDATE students SET first_name = $1, last_name = $2, grade = $3, email = $4, WHERE id = $5',
+  pool.query('UPDATE students SET first_name = $1, last_name = $2, grade = $3, email = $4 WHERE id = $5',
     [req.body.first_name, req.body.last_name, req.body.grade, req.body.email, req.params.id]
   )
     .catch(err => console.log(err))
@@ -52,7 +52,7 @@ router.put('/api/students/:id', (req, res) => {
 // DELETE
 router.delete('/api/students/:id', (req,res) => {
 
-  pool.query(`DELETE FROM students WHERE id = ${req.params.id}`)
+  pool.query('DELETE FROM students WHERE id = $1') [req.params.id]
   .catch(err => console.log(err))
   .then((data) => res.json(data.rows))
 

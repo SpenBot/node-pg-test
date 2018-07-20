@@ -1,0 +1,70 @@
+/* COMPONENT */
+
+.students-details-comp{
+
+}
+
+
+/* ALL FORMS */
+
+.all-forms {
+  margin: 30px auto 0px;
+  width: 380px;
+  padding: 20px 30px;
+  background-color: rgb(245, 245, 245);
+  font-size: 18px;
+}
+
+
+/* FORM INPUT*/
+
+.form-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 10px auto;
+}
+
+.form-input input{
+  width: 200px;
+  font-size: 18px;
+}
+
+
+/* BUTTON */
+
+.all-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 400px;
+  margin: 10px auto;
+}
+
+.form-button {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding: 20px 10px;
+  width: 160px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.form-button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  box-shadow: 3px 3px 3px rgb(180, 180, 180);
+}
+
+.save {
+  background-color: orange;
+}
+
+.delete {
+  background-color: red;
+}

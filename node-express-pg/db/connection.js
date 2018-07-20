@@ -15,11 +15,11 @@ const pool = new Pool({
 
 pool.connect((err, client) => {
     if (err) {
-      console.log('\n\t Database Connection Error: \n', err.stack)
+      console.log('\n\t Database Connection Error:', err.stack)
       client.release()
       pool.end()
     } else {
-      console.log('\n\t Database Connection Successful:', client.database)
+      console.log('\n\t Database Connection Successful:', client.database, '\n')
     }
 })
 

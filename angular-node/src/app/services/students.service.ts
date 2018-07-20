@@ -26,9 +26,28 @@ export class StudentsService {
   //// API ROUTE ////
   private URL = environment.nodeApiUrl
 
-  //// HTTP REQUESTS ////
-  getStudents () : Observable<Student[]>{
-    return this.http.get<Student[]>(this.URL + '/api/students')
+
+  //////// HTTP REQUESTS ////////
+
+  // GET ALL
+  getStudents () : Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.URL}/api/students`)
+  }
+  // GET ONE
+  getStudent (id: string) : Observable<Student> {
+    return this.http.get<Student>(`${this.URL}/api/students/${id}`)
+  }
+  // CREATE
+  addStudent (student: Student) : Observable<Student> {
+    return this.http.post<Student>(`${this.URL}/api/students`, student)
+  }
+  // UPDATE
+  updateStudent (student: Student) : Observable<Student> {
+    return this.http.put<Student>(`${this.URL}/api/students/${student.id}`, student)
+  }
+  // DELETE
+  deleteStudent (id: string) : Observable<Student> {
+    return this.http.delete<Student>(`${this.URL}/api/students/${id}`)
   }
 
 

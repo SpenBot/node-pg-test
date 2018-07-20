@@ -3,9 +3,7 @@ export class Student {
   id: string;
   first_name: string;
   last_name: string;
-  grade: number;
+  grade: string;
   email: string;
-
-  constructor() { }
 
 }

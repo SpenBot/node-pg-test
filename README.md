@@ -4,22 +4,26 @@
 
   - THIS WILL BE UPDATED WITH A SCRIPT SOON!
 
-  - sign in to postgres as default user
+  - sign in to postgres as default user (from the root of you OS, I think)
 ```
       $ sudo -u postgres psql postgres
 ```
-  - create database
-```  
+  - create database, then connect to it
+```
       # CREATE DATABASE node_test_db;
+      # \c node_test_db
 ```
-  - create table
+  - run script (<path-from-your-root>/node-express-pg/db/seeds/seeds.js)
 ```  
-      # CREATE TABLE students (id SERIAL PRIMARY KEY, first_name VARCHAR NOT NULL, last_name VARCHAR NOT NULL, grade integer NOT NULL, email VARCHAR NOT NULL UNIQUE);
+      # \i <full-path-to-seeds.js>;
 ```
-  - insert dummy data (repeat this)
+  - check if it worked, then quit
 ```  
-      # INSERT INTO students (first_name, last_name, grade, email) VALUES ('Spenser', 'Holstein', 4, 'spen@mail.com');
+      # \d
+      # SELECT * FROM students;
+      # \q
 ```
+
 
 ### Starting the Node-Express-PostGres Backend :
 

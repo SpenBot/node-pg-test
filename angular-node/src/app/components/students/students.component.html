@@ -1,28 +1,24 @@
 
-<div class="students-component">
+<div class="students-comp">
 
   <h3> All Students </h3>
 
-  <div class="students-container">
+  <div class="students-cols">
+    <h5>ID</h5>
+    <h5>NAME</h5>
+    <h5>GRADE</h5>
+    <h5>EMAIL</h5>
+  </div>
 
-    <div class="students-cols">
-      <h5>ID</h5>
-      <h5>NAME</h5>
-      <h5>GRADE</h5>
-      <h5>EMAIL</h5>
+  <div *ngIf="students" class="students-container">
+    <div *ngFor="let student of students" class="students-li" routerLink="/students/{{student.id}}">
+
+      <p> {{student.id}} <p>
+      <p> {{student.first_name}} {{student.last_name}} </p>
+      <p> {{student.grade}} </p>
+      <p> {{student.email}} </p>
+
     </div>
-
-    <div *ngIf="students" class="students-results">
-      <div *ngFor="let student of students" class="students-li" routerLink="/students/{{student.id}}">
-
-        <p> {{student.id}} <p>
-        <p> {{student.first_name}} {{student.last_name}} </p>
-        <p> {{student.grade}} </p>
-        <p> {{student.email}} </p>
-
-      </div>
-    </div>
-
   </div>
 
 </div>
