@@ -67,32 +67,25 @@
 
 # PLAN
 
+1.
   - set up a local postgres
   - populate postgres dummy data
-
-
-
+2.
   - build node service
   - connect to postgres
   - build CRUD REST routes
-
-
-
+3.
   - build angular front-end and test CRUD functionality.
-
-
-
+4.
   - add join table
   - add seed files and data, with users
   - handle validations
   - handle merges?
   - add models to backend?
   - confirm connection pool stability, and database security
-
-
+5.
   - deploy postgres
   - deploy node and angular
-
-
+6.
   - build docker container/images
   - use openshift to deploy docker container with github webhook
