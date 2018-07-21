@@ -2,7 +2,7 @@
 
 ### Setting Up Local PostGres (on linux) :
 
-  - sign in to postgres as default user (from the root of you OS, I think)
+  - sign in to postgres as default user
 ```
       $ sudo -u postgres psql postgres
 ```
@@ -11,9 +11,10 @@
       # CREATE DATABASE node_test_db;
       # \c node_test_db
 ```
-  - run script with full path, which can be copied by right clicking on your text-editor usually.
+  - run script with full path (path can be copied by right clicking in your text-editor usually)
+  - seed file is in 'node-express-pg/db/seeds/seeds.sql'
 ```  
-      # \i <full-path-to-seeds.js>;
+      # \i <full-path>/seeds.sql;
 ```
   - check if it worked, then quit
 ```  
