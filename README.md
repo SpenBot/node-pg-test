@@ -25,7 +25,7 @@
 
 ### Starting the Node-Express-PostGres Backend :
 
-  - cd into the n-e-p directory, and set the configuration file (you may need to do $ npm install)
+  - cd into the node directory, and set the configuration file (you may need to do $ npm install)
 ```
       $ source ./cfg/config_local.sh
 ```
@@ -36,7 +36,7 @@
 
 ### Running Angular-Node
 
-  - cd into the a-n directory (again $ npm install)
+  - cd into the angular directory (again $ npm install)
 ```
       $ ng serve
 ```
@@ -77,15 +77,17 @@
 3.
   - build angular front-end and test CRUD functionality.
 4.
-  - add join table
-  - add seed files and data, with users
-  - handle validations
-  - handle merges?
-  - add models to backend?
+  - add join table to db
+  - add seed/dump files and data
+  - add psql users
+  - handle merges
+  - add models to backend
   - confirm connection pool stability, and database security
+  - handle validations
 5.
-  - deploy postgres
-  - deploy node and angular
+  - deploy postgres to AWS
+  - deploy node and angular to AWS
 6.
   - build docker container/images
+  - use docker to deploy to AWS
   - use openshift to deploy docker container with github webhook
