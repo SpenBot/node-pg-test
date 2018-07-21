@@ -1,6 +1,6 @@
 /* COMPONENT */
 
-.students-comp {
+.courses-comp {
   margin: 30px auto;
   width: 800px;
 }
@@ -8,7 +8,7 @@
 
 /* COMPONENT HEADER */
 
-.students-header {
+.courses-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -19,7 +19,7 @@
 
 /* COLUMNS LABEL */
 
-.students-cols {
+.courses-cols {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -32,18 +32,18 @@
 
 /* STUDENTS CONTAINER */
 
-.students-container {
+.courses-container {
   min-height: 0px;
   max-height: 300px;
   overflow: auto;
   text-align: center;
 }
 
-.students-container::-webkit-scrollbar {
+.courses-container::-webkit-scrollbar {
   background-color: rgb(235, 235, 235);
 }
 
-.students-container::-webkit-scrollbar-thumb {
+.courses-container::-webkit-scrollbar-thumb {
   border-radius: 2px;
   background-color: rgba(0, 0, 0, .2);
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5)
@@ -52,7 +52,7 @@
 
 /* STUDENT ITEM */
 
-.students-li {
+.courses-li {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -60,7 +60,7 @@
    border-bottom: solid 1px rgb(220, 220, 220);
 }
 
-.students-li:hover {
+.courses-li:hover {
   background-color: rgb(235, 245, 255);
   cursor: pointer;
   text-decoration: underline;

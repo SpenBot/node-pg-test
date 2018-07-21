@@ -1,7 +1,9 @@
 .home-comp {
+
 }
 
 .home-image {
+  display: block;
   width: 640px;
   height: 360px;
   margin: 30px auto;

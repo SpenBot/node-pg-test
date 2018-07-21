@@ -20,6 +20,7 @@ app.use(cors())
 const port = config.PORT
 app.set('port', port)
 
+// run server
 app.listen(app.get('port'), () => {
   console.log(`\n\t Node-Postgres Server Running On PORT:${app.get('port')}`)
 })
@@ -29,12 +30,10 @@ app.listen(app.get('port'), () => {
 /////// ROUTES ////////
 
 const studentsRoutes = require('./routes/studentsRoutes')
+const coursesRoutes = require('./routes/coursesRoutes')
 
 app.use('/', studentsRoutes)
-// app.use('/', coursesRoutes)
-
-
-
+app.use('/', coursesRoutes)
 
 
 

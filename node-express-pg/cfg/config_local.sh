@@ -8,6 +8,6 @@ export PORT
 POSTGRES_URL="postgres://postgres:postgres@localhost:5432/node_test_db"
 export POSTGRES_URL
 
-# maximum pool connections?
+# maximum pool connections
 MAX_CON=5
 export MAX_CON

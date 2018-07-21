@@ -42,13 +42,6 @@ export class StudentsComponent implements OnInit {
       })
   }
 
-  // clickAdd () : void {
-  //   this.studentsService.addStudent()
-  //     .subscribe(student => {
-  //       console.log(student)
-  //     })
-  // }
-
 }
 
 
