@@ -51,19 +51,23 @@ export class StudentDetailComponent implements OnInit {
   clickSave () : void {
     this.studentsService.updateStudent(this.student)
       .subscribe(student => {
-        alert(`Changes to STUDENT ${this.student.id} :
-          \n ${this.student.first_name} ${this.student.last_name}
-          \n has been updated.`)
+        alert(`Changes to STUDENT
+          \t id: ${this.student.id} :
+          \t name: ${this.student.first_name} ${this.student.last_name}
+          has been updated.`)
       })
   }
 
   //// CLICK DELETE ////
   clickDelete () : void {
-  this.studentsService.deleteStudent(this.student.id)
-    .subscribe( () => {
-      alert(`Deleted Student : ${this.student.id} - ${this.student.first_name} ${this.student.last_name}`)
-      this.router.navigate(['students'])
-    })
+      this.studentsService.deleteStudent(this.student.id)
+        .subscribe( () => {
+          alert(`Deleted STUDENT
+            \t id: ${this.student.id}
+            \t name: ${this.student.first_name} ${this.student.last_name}`
+          )
+          this.router.navigate(['students'])
+        })
   }
 
 

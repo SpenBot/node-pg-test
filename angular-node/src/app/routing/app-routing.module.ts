@@ -10,8 +10,8 @@ import { StudentDetailComponent } from '../components/student-detail/student-det
 import { AddStudentComponent } from '../components/add-student/add-student.component';
 
 import { CoursesComponent } from '../components/courses/courses.component';
-// import { CourseDetailComponent } from '../components/course-detail/course-detail.component';
-// import { AddCourseComponent } from '../components/add-course/add-course.component';
+import { CourseDetailComponent } from '../components/course-detail/course-detail.component';
+import { AddCourseComponent } from '../components/add-course/add-course.component';
 
 
 
@@ -36,6 +36,14 @@ const routes: Routes = [
   {
     path: 'courses',
     component: CoursesComponent
+  },
+  {
+    path: 'courses/:id',
+    component: CourseDetailComponent
+  },
+  {
+    path: 'add-course',
+    component: AddCourseComponent
   }
 ]
 

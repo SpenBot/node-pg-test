@@ -26,7 +26,7 @@ router.get('/api/courses/:id', (req, res) => {
 // CREATE
 router.post('/api/courses', (req, res) => {
 
-  pool.query('INSERT INTO courses (title, room, class_time) VALUES ($1, $2, $3, $4)',
+  pool.query('INSERT INTO courses (title, room, class_time) VALUES ($1, $2, $3)',
     [req.body.title, req.body.room, req.body.class_time]
   )
     .catch(err => console.log(err))

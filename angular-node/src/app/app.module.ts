@@ -12,6 +12,8 @@ import { StudentsComponent } from './components/students/students.component';
 import { StudentDetailComponent } from './components/student-detail/student-detail.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { CourseDetailComponent } from './components/course-detail/course-detail.component';
+import { AddCourseComponent } from './components/add-course/add-course.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CoursesComponent } from './components/courses/courses.component';
     HomepageComponent,
     StudentDetailComponent,
     AddStudentComponent,
-    CoursesComponent
+    CoursesComponent,
+    CourseDetailComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,

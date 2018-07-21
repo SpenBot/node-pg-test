@@ -8,3 +8,8 @@
   height: 360px;
   margin: 30px auto;
 }
+
+.home-comp h2 {
+  color: orange;
+  text-align: center;
+}

@@ -1,0 +1,33 @@
+<div *ngIf="course" class="courses-details-comp">
+
+  <h3> Edit Course </h3>
+
+  <div class="all-forms">
+
+    <div class="form-input">
+      <label for="id"> ID : </label>
+      <input [(ngModel)]="course.id" name="id" style="background-color:lightgray;"disabled>
+    </div>
+    <div class="form-input">
+      <label for="name"> TITLE : </label>
+      <input [(ngModel)]="course.title" name="title">
+    </div>
+    <div class="form-input">
+      <label for="name"> ROOM : </label>
+      <input [(ngModel)]="course.room" name="room">
+    </div>
+    <div class="form-input">
+      <label for="id"> TIME : </label>
+      <input [(ngModel)]="course.class_time" name="time">
+    </div>
+
+  </div>
+
+
+  <div class="all-buttons">
+    <div class="form-button save" (click)="clickSave()"> SAVE CHANGES </div>
+    <div class="form-button delete" (click)="clickDelete()"> DELETE </div>
+  </div>
+
+
+</div>

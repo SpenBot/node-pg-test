@@ -51,12 +51,12 @@
   - when you start index.js you should see 'Database Connection Success' message. Thats from db/connection.js, but since index.js uses the routes, and the routes uses connection.js, we get that message (...I think)
 
   - this uses JavaScript ES6 promises
-    - promises are functions that can be tied to asynchronous functions, like http requests
+    - promises are functions that can be chained to asynchronous functions, like http requests
     - promises will wait for the asynchronous function to complete before executing.
     - basically, they are analogous to callback functions.
     - .then and .catch are very common promises in node-express servers.
 
-  - I highly installing nodemon globally to use to run node servers.
+  - I highly recommend installing 'nodemon' globally to use to run node servers.
   - it allows hot-refreshes, meaning it will re-start the server every time you save changes in your text-editor.  
 ```
       $ npm install -g nodemon
@@ -71,12 +71,15 @@
   - populate postgres dummy data
 
 
+
   - build node service
   - connect to postgres
   - build CRUD REST routes
 
 
+
   - build angular front-end and test CRUD functionality.
+
 
 
   - add join table
