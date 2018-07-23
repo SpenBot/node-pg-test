@@ -11,7 +11,7 @@
       # CREATE DATABASE node_test_db;
       # \c node_test_db
 ```
-  - run script with full path (path can be copied by right clicking in your text-editor usually)
+  - now that you're signed in and created/connected to a db, run a seed file script with full path (path can be copied by right clicking in your text-editor usually)
   - seed file is in 'node-express-pg/db/seeds/seeds.sql'
 ```  
       # \i <full-path>/seeds.sql;
