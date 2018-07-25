@@ -43,29 +43,23 @@
 ```
 
 
+# FEATURES
 
-# NOTES
+  - uses "pg" module for node-postgres connection
+  - uses "pool" to manage connections
+  - backend combined data responses
 
-1.
-  - THE BACKEND HERE DOES NOT COMBINE DATA FOR ENROLLMENTS. THE FRONT END IS DOING SEPARATE API CALLS AND COMBINING THEM ON THE FRONT END. THIS IS TO KEEP THE BACKEND ROUTES SIMPLE. CAN BE CHANGED IN THE FUTURE.
-2.
-  - the first place you should look is index.js (default main for node) in '/node-express-pg'
-  - then checkout the routes, you'll notice they use pool.query
-  - pool comes from 'pg' in db/connection.js, where the connection to the database is logged and confirmed.
-  - cfg sets environment variables, and models aren't utilized yet.
-3.
-  - this uses JavaScript ES6 promises
-    - promises are functions that can be chained to asynchronous functions, like http requests
-    - promises will wait for the asynchronous function to complete before executing.
-    - basically, they are analogous to callback functions.
-    - .then and .catch are very common promises in node-express servers.
-4.
-  - I highly recommend installing 'nodemon' globally to use to run node servers.
-  - it allows hot-refreshes, meaning it will re-start the server every time you save changes in your text-editor.  
-```
-      $ npm install -g nodemon
-      $ nodemon index.js
-```
+
+
+# FEATURES TO ADD
+
++ BACKEND
+  - database migrations
+  - backend validations
+  - database backups
+
++ FRONTEND
+  - view for enrollments data info
 
 
 
