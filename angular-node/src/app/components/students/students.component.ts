@@ -39,9 +39,22 @@ export class StudentsComponent implements OnInit {
     this.studentsCombinedService.getStudents()
       .subscribe(students => {
         this.students = students
-        console.log(students)
+        this.setView()
       })
   }
+
+  //// SET VIEW ////
+  setView () : void {
+    this.students.map(student => {
+      student.view = "condensed"
+    })
+  }
+
+  //// TOGGLE LIST VIEW ////
+  toggleSize(studentDiv) {
+    studentDiv.view === "expanded" ? studentDiv.view = "condensed" : studentDiv.view = "expanded"
+  }
+
 
 }
 
