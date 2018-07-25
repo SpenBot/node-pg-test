@@ -2,7 +2,7 @@
 
 const express = require('express')
 const router = express.Router()
-const pool = require('../../db/connection')
+const pool = require('../db/connection')
 
 
 
@@ -10,35 +10,42 @@ const pool = require('../../db/connection')
 //////// ROUTE CONTROLLER FUNCTIONS ////////
 
 // GET ALL
-router.get('/api/students', (req, res) => {
+router.get('/api/students-combined', (req, res) => {
 
   pool.query('SELECT * FROM students JOIN enrollments ON students.id = enrollments.student_id JOIN courses ON courses.id = enrollments.course_id;')
     .catch(err => console.log(err))
-    .then((data) => {
+    .then((resData) => {
 
+        // make new array
         let newData = []
 
-        data.rows.forEach(d => {
+        // loop through response resData
+        resData.rows.forEach(data => {
 
-            d.enrollments = []
+            // create enrollments property array
+            data.enrollments = []
 
+            // check if there is a matching student id
             let matchIdx = newData.findIndex(nd => {
-              return nd.student_id === d.student_id;
+              return nd.student_id === data.student_id;
             })
 
+            // push enrollments only if student exists
             if (matchIdx >= 0) {
-              newData[matchIdx].enrollments.push({
-                course_title: d.title,
-                course_room: d.room,
-                course_time: d.class_time
-              })
-            } else if (matchIdx === -1) {
-              d.enrollments.push({
-                course_title: d.title,
-                course_room: d.room,
-                course_time: d.class_time
-              })
-              newData.push(d)
+                newData[matchIdx].enrollments.push({
+                  course_title: data.title,
+                  course_room: data.room,
+                  course_time: data.class_time
+                })
+            }
+            // push data with enrollments if student does not exists 
+            else if (matchIdx === -1) {
+                data.enrollments.push({
+                  course_title: data.title,
+                  course_room: data.room,
+                  course_time: data.class_time
+                })
+                newData.push(data)
             }
 
         })

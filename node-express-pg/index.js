@@ -29,11 +29,12 @@ app.listen(app.get('port'), () => {
 /////// ROUTES ////////
 
 const studentsRoutes = require('./routes/studentsRoutes')
-const studentsRoutes = require('./routes/studentsCombinedRoutes')
+const studentsCombinedRoutes = require('./routes/studentsCombinedRoutes')
 const coursesRoutes = require('./routes/coursesRoutes')
 
 app.use('/', studentsRoutes)
 app.use('/', coursesRoutes)
+app.use('/', studentsCombinedRoutes)
 
 
 
