@@ -47,10 +47,10 @@
 
   - This is the basic version of the app. DOES NOT contain any join tables or combined data for enrollments.
 
+  - uses "pg" module for node-postgres connection
+  - uses "pool" to manage connections
+
 # NOTES
-
-
-  ---
 
   - the first place you should look is index.js (default main for node) in '/node-express-pg'
   - then checkout the routes, you'll notice they use pool.query
