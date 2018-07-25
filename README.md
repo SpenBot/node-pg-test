@@ -12,7 +12,7 @@
       # \c node_test_db
 ```
   - now that you're signed in and created/connected to a db, run a seed file script with full path (path can be copied by right clicking in your text-editor usually)
-  - seed file is in 'node-express-pg/db/seeds/seeds.sql'
+  - seed file is in 'postgres-db/seeds/seeds.sql'
 ```  
       # \i <full-path>/seeds.sql;
 ```
@@ -57,6 +57,7 @@
   - database migrations
   - backend validations
   - database backups
+  - use either filter() or reduce() to combine data
 
 + FRONTEND
   - view for enrollments data info
