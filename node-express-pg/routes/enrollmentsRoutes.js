@@ -10,24 +10,24 @@ const pool = require('../db/connection')
 //////// ROUTE CONTROLLER FUNCTIONS ////////
 
 // GET ALL
-router.get('/api/students', (req, res) => {
-  pool.query('SELECT * FROM students')
+router.get('/api/enrollments', (req, res) => {
+  pool.query('SELECT * FROM enrollments')
     .catch(err => console.log(err))
     .then((data) => res.json(data.rows))
 })
 
 // GET ONE
-router.get('/api/students/:id', (req, res) => {
-  pool.query('SELECT * FROM students WHERE id = $1', [req.params.id])
+router.get('/api/enrollments/:id', (req, res) => {
+  pool.query('SELECT * FROM enrollments WHERE id = $1', [req.params.id])
     .catch(err => console.log(err))
     .then((data) => res.json(data.rows[0]))
 })
 
 // CREATE
-router.post('/api/students', (req, res) => {
+router.post('/api/enrollments', (req, res) => {
 
-  pool.query('INSERT INTO students (first_name, last_name, grade, email) VALUES ($1, $2, $3, $4)',
-    [req.body.first_name, req.body.last_name, req.body.grade, req.body.email]
+  pool.query('INSERT INTO enrollments (course_id, student_id) VALUES ($1, $2, $3)',
+    [req.body.course_id, req.body.student_id]
   )
     .catch(err => console.log(err))
     .then((data) => res.json(data.rows))
@@ -35,10 +35,10 @@ router.post('/api/students', (req, res) => {
 })
 
 // UPDATE
-router.put('/api/students/:id', (req, res) => {
+router.put('/api/enrollments/:id', (req, res) => {
 
-  pool.query('UPDATE students SET first_name = $1, last_name = $2, grade = $3, email = $4 WHERE id = $5',
-    [req.body.first_name, req.body.last_name, req.body.grade, req.body.email, req.params.id]
+  pool.query('UPDATE enrollments SET course_id = $1, student_id = $2 = $3 WHERE id = $4',
+    [req.body.course_id, req.body.student_id, req.params.id]
   )
     .catch(err => console.log(err))
     .then((data) =>  res.json(data.rows))
@@ -46,9 +46,9 @@ router.put('/api/students/:id', (req, res) => {
 })
 
 // DELETE
-router.delete('/api/students/:id', (req,res) => {
+router.delete('/api/enrollments/:id', (req,res) => {
 
-  pool.query('DELETE FROM students WHERE id = $1', [req.params.id])
+  pool.query('DELETE FROM enrollments WHERE id = $1', [req.params.id])
     .catch(err => console.log(err))
     .then((data) => res.json(data))
 
