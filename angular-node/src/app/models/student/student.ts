@@ -5,6 +5,7 @@ export class Student {
   last_name: string;
   grade: string;
   email: string;
+  enrollments: any[];
 
   constructor () {
     this.id = null;
@@ -12,6 +13,7 @@ export class Student {
     this.last_name = '';
     this.grade = '';
     this.email = '';
+    this.enrollments = [];
   }
 
 }

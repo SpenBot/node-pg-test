@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from '../../models/student/student'
 
 //////// IMPORT SERVICES /////////
-import { StudentsService } from '../../services/students-service/students.service'
+import { StudentsCombinedService } from '../../services/students-combined-service/students-combined.service'
 
 
 
@@ -23,7 +23,7 @@ export class StudentsComponent implements OnInit {
 
   //// CONSTRUCTOR ////
   constructor(
-    private studentsService : StudentsService
+    private studentsCombinedService : StudentsCombinedService
   ) { }
 
   //// COMPONENT PROPERTIES ////
@@ -36,7 +36,7 @@ export class StudentsComponent implements OnInit {
 
   //// GET STUDENTS ////
   getStudents () : void {
-    this.studentsService.getStudents()
+    this.studentsCombinedService.getStudents()
       .subscribe(students => {
         this.students = students
         console.log(students)

@@ -12,7 +12,7 @@ const pool = require('../db/connection')
 // GET ALL
 router.get('/api/students-combined', (req, res) => {
 
-  pool.query('SELECT * FROM students JOIN enrollments ON students.id = enrollments.student_id JOIN courses ON courses.id = enrollments.course_id;')
+  pool.query('SELECT s.id, s.first_name, s.last_name, s.grade, s.email, e.course_id, c.title, c.room, c.class_time FROM students as s JOIN enrollments as e ON s.id = e.student_id JOIN courses as c ON c.id = e.course_id;')
     .catch(err => console.log(err))
     .then((resData) => {
 
@@ -20,32 +20,32 @@ router.get('/api/students-combined', (req, res) => {
         let newData = []
 
         // loop through response resData
-        resData.rows.forEach(data => {
+        resData.rows.forEach(rData => {
 
             // create enrollments property array
-            data.enrollments = []
+            rData.enrollments = []
 
             // check if there is a matching student id
-            let matchIdx = newData.findIndex(nd => {
-              return nd.student_id === data.student_id;
+            let matchIdx = newData.findIndex(nData => {
+              return nData.id === rData.id;
             })
 
-            // push enrollments only if student exists
+            // push enrollments only, if student exists
             if (matchIdx >= 0) {
                 newData[matchIdx].enrollments.push({
-                  course_title: data.title,
-                  course_room: data.room,
-                  course_time: data.class_time
+                  course_title: rData.title,
+                  course_room: rData.room,
+                  course_time: rData.class_time
                 })
             }
-            // push data with enrollments if student does not exists 
+            // push all rData with enrollments, if student does not exists
             else if (matchIdx === -1) {
-                data.enrollments.push({
-                  course_title: data.title,
-                  course_room: data.room,
-                  course_time: data.class_time
+                rData.enrollments.push({
+                  course_title: rData.title,
+                  course_room: rData.room,
+                  course_time: rData.class_time
                 })
-                newData.push(data)
+                newData.push(rData)
             }
 
         })

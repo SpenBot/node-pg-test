@@ -60,7 +60,9 @@
   - use either filter() or reduce() to combine data
 
 + FRONTEND
-  - view for enrollments data info
+  - expand view for enrollments data info
+  - edit button
+  - search bar
 
 
 
