@@ -1,6 +1,11 @@
 
--- STUDENTS ---------------------------------
+-- DROP TABLES ------------------------------
+DROP TABLE IF EXISTS enrollments;
 DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS courses;
+
+
+-- STUDENTS ---------------------------------
 
 CREATE TABLE students (
   id SERIAL PRIMARY KEY,
@@ -22,7 +27,6 @@ INSERT INTO students (first_name, last_name, grade, email) VALUES
 
 
 -- COURSES ----------------------------------
-DROP TABLE IF EXISTS courses;
 
 CREATE TABLE courses (
   id SERIAL PRIMARY KEY,
@@ -42,7 +46,6 @@ INSERT INTO courses (title, room, class_time) VALUES
   ('Biology', '2D', '9:20');
 
 -- ENROLLMENTS --------------------------------
-DROP TABLE IF EXISTS enrollments;
 
 CREATE TABLE enrollments (
   id SERIAL PRIMARY KEY,
