@@ -50,13 +50,17 @@
   - postgresql
 
   - uses "pg" module for node-postgres connection
-  - uses "pool" to manage connections
+  - uses pg pools to manage connections
   - backend combined data responses
 
 
 
 
 # FEATURES TO ADD
+
++ DATABASE
+  - nest tables in schemas
+  - add users
 
 + BACKEND
   - database migrations
