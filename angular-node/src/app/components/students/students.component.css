@@ -92,7 +92,7 @@
   height: 120px;
   width: 340px;
   font-size: 12px;
-  background-color: rgb(240, 240, 240);
+  border: solid 1px rgb(180, 180,180);
   overflow: auto;
 }
 

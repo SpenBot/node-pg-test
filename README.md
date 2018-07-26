@@ -45,9 +45,14 @@
 
 # FEATURES
 
+  - node, express, pg, cors
+  - angular
+  - postgresql
+
   - uses "pg" module for node-postgres connection
   - uses "pool" to manage connections
   - backend combined data responses
+
 
 
 
@@ -55,12 +60,14 @@
 
 + BACKEND
   - database migrations
+  - pool/client connection handling
   - backend validations
   - database backups
   - use either filter() or reduce() to combine data
+  - handle combined data crud functions
 
 + FRONTEND
-  - adding enrollments to a student
+  - crud functions for combined data
   - search bar
 
 

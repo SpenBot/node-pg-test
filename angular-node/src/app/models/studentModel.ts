@@ -5,7 +5,10 @@ export class Student {
   last_name: string;
   grade: string;
   email: string;
+
   enrollments: any[];
+
+  view: string;
 
   constructor () {
     this.id = null;

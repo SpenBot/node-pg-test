@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //////// IMPORT SCHEMA CLASSES /////////
-import { Student } from '../../models/student/student'
+import { Student } from '../../models/studentModel'
 
 //////// IMPORT SERVICES /////////
 import { StudentsCombinedService } from '../../services/students-combined-service/students-combined.service'
