@@ -12,7 +12,7 @@
       # \c node_test_db
 ```
   - now that you're signed in and created/connected to a db, run a seed file script with full path (path can be copied by right clicking in your text-editor usually)
-  - seed file is in 'node-express-pg/db/seeds/seeds.sql'
+  - seed file is in 'postgres-db/seeds/seeds.sql'
 ```  
       # \i <full-path>/seeds.sql;
 ```
@@ -24,7 +24,7 @@
 ```
 
 
-### Starting the Node-Express-PostGres Backend :
+### Starting the Node-Express-Sequelize Backend :
 
   - cd into the node directory, and set the configuration file (you may need to do $ npm install)
 ```
