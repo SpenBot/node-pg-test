@@ -47,32 +47,15 @@
 
   - This is the basic version of the app. DOES NOT contain any join tables or combined data for enrollments.
 
-  - uses "pg" module for node-postgres connection
-  - uses "pool" to manage connections
+  - node, express, sequelize, cors
+  - angular
+  - postgresql
+  - uses sequelize ORM for postgres connection
+  - uses pools to manage connections
 
-# NOTES
 
-  - the first place you should look is index.js (default main for node) in '/node-express-pg'
-  - then checkout the routes, you'll notice they use pool.query
-  - pool comes from 'pg' in db/connection.js, where the connection to the database is logged and confirmed.
-  - cfg sets environment variables, and models aren't utilized yet.
+# FEATURES TO ADD
 
-  ---
-
-  - this uses JavaScript ES6 promises
-    - promises are functions that can be chained to asynchronous functions, like http requests
-    - promises will wait for the asynchronous function to complete before executing.
-    - basically, they are analogous to callback functions.
-    - .then and .catch are very common promises in node-express servers.
-
-    ---
-
-  - I highly recommend installing 'nodemon' globally to use to run node servers.
-  - it allows hot-refreshes, meaning it will re-start the server every time you save changes in your text-editor.  
-```
-      $ npm install -g nodemon
-      $ nodemon index.js
-```
 
 
 
