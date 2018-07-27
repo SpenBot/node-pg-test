@@ -28,11 +28,42 @@ app.listen(app.get('port'), () => {
 
 /////// ROUTES ////////
 
-const studentsRoutes = require('./routes/studentsRoutes')
-const coursesRoutes = require('./routes/coursesRoutes')
+// const studentsRoutes = require('./routes/studentsRoutes')
+// const coursesRoutes = require('./routes/coursesRoutes')
 
-app.use('/', studentsRoutes)
-app.use('/', coursesRoutes)
+// app.use('/', studentsRoutes)
+// app.use('/', coursesRoutes)
+
+
+
+
+const sequelize = require('./db/connection')
+const StudentModel = require('./models/studentModel')
+
+
+//////// ROUTE CONTROLLER FUNCTIONS ////////
+
+// GET ALL
+app.get('/api/students', (req, res) => {
+
+    StudentModel.findAll()
+      .catch(err => console.log('WTF', err))
+      .then(students => {
+        res.json(students)
+        console.log('\n\n DATA:', students)
+      })
+
+})
+
+// StudentModel.findOne()
+//   .catch(err => console.log('WTF', err))
+//   .then(students => {
+//     res.json(students.dataValues)
+//     console.log('\n\n DATA:', students.dataValues)
+//   })
+
+
+
 
 
 

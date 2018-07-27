@@ -1,33 +1,33 @@
 //////// DEPENDENCIES, CONFIGURATIONS ////////
 
-const { Pool } = require('pg')
+const Sequelize = require('sequelize')
 const config = require('../cfg/config.js')
-
 
 
 
 //////// DATABASE CONNECTION ////////
 
-const pool = new Pool({
-  connectionString: config.POSTGRES_URL,
-  max: config.MAX_CON
-})
+const sequelize = new Sequelize(
+  config.POSTGRES_URL,
+  {
+    dialect: 'postgres',
+    pool:{max: config.MAX_CON, min: 0, acquire: 30000, idle: 10000}
+  }
+)
 
-pool.connect((err, client) => {
-    if (err) {
-      console.log('\n\t Database Connection Error:', err.stack)
-      client.release()
-      pool.end()
-    } else {
-      console.log('\n\t Database Connection Successful:', client.database, '\n')
-    }
-})
+sequelize.authenticate()
+  .then(() => {
+    console.log('\n\tConnection has been established successfully.\n')
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err)
+  });
 
 
 
 //////// EXPORT MODULE ////////
 
-module.exports = pool
+module.exports = sequelize
 
 
 
