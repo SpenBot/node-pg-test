@@ -43,7 +43,6 @@ export class StudentDetailComponent implements OnInit {
 
     this.studentsService.getStudent(id)
       .subscribe(student => {
-        console.log(student)
         this.student = student
       })
   }
