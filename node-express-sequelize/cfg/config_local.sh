@@ -5,7 +5,7 @@ PORT=3000
 export PORT
 
 # postgres db connection string
-POSTGRES_URL="postgres://postgres:postgres@localhost:5432/node_test_db"
+POSTGRES_URL="postgres://postgres:postgres@localhost:5432/node_seq_test_db"
 export POSTGRES_URL
 
 # maximum pool connections

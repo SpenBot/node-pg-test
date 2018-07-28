@@ -7,7 +7,7 @@ const config = require('../cfg/config.js')
 
 //////// DATABASE CONNECTION ////////
 
-const sequelize = new Sequelize(
+const connection = new Sequelize(
   config.POSTGRES_URL,
   {
     dialect: 'postgres',
@@ -15,7 +15,7 @@ const sequelize = new Sequelize(
   }
 )
 
-sequelize.authenticate()
+connection.authenticate()
   .then(() => {
     console.log('\n\tConnection has been established successfully.\n')
   })
@@ -27,7 +27,7 @@ sequelize.authenticate()
 
 //////// EXPORT MODULE ////////
 
-module.exports = sequelize
+module.exports = connection
 
 
 

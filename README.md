@@ -8,8 +8,8 @@
 ```
   - create database, then connect to it
 ```
-      # CREATE DATABASE node_test_db;
-      # \c node_test_db
+      # CREATE DATABASE node_seq_test_db;
+      # \c node_seq_test_db
 ```
   - now that you're signed in and created/connected to a db, run a seed file script with full path (path can be copied by right clicking in your text-editor usually)
   - seed file is in 'postgres-db/seeds/seeds.sql'
@@ -53,8 +53,12 @@
   - uses sequelize ORM for postgres connection
   - uses pools to manage connections
 
-
 # FEATURES TO ADD
+
+
+
+# ISSUES
+
 
 
 

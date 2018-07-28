@@ -2,7 +2,6 @@
 
 const express = require('express')
 const router = express.Router()
-const sequelize = require('../db/connection')
 
 const StudentModel = require('../models/studentModel')
 
@@ -12,8 +11,37 @@ const StudentModel = require('../models/studentModel')
 // GET ALL
 router.get('/api/students', (req, res) => {
   StudentModel.findAll()
-    .catch(err => console.log('WTF', err))
-    .then(res => res.json)
+    .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
+    .then(students => res.json(students))
+})
+
+// GET ONE BY ID
+router.get('/api/students/:id', (req, res) => {
+  StudentModel.findById(req.params.id)
+    .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
+    .then(student => res.json(student.dataValues))
+})
+
+// GET ONE BY NAME
+router.get('/api/students/name/:firstname/:lastname', (req, res) => {
+  StudentModel.findOne({
+    where: {
+       first_name: req.params.firstname,
+       last_name: req.params.lastname
+     }
+   })
+    .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
+    .then(student => res.json(student))
+})
+
+// CREATE
+router.post('/api/students', (req, res) => {
+  StudentModel.create()
+    .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
+    .then(student => {
+      console.log(req.body)
+      res.json(student.dataValues)
+    })
 })
 
 
@@ -21,6 +49,24 @@ router.get('/api/students', (req, res) => {
 
 
 
+//
+// const id = customerId;
+// Customer.update( { firstname: firstname, lastname: lastname, age: age },
+// 				 { where: {id: customerId} }
+// 			   ).then(() => {
+// 				 res.status(200).send("updated successfully a customer with id = " + id);
+// 			   });
+//
+
+
+
+//////// EXPORT MODULES ////////
+
+module.exports = router
+
+
+
+// END
 
 
 
