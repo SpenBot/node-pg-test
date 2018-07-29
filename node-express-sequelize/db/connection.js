@@ -23,7 +23,7 @@ connection.validate({
     console.log('\n\t >>> Connection to PostGres Database Successful \n')
   })
   .catch(err => {
-    console.error('Unable to connect to the database:', err)
+    console.log('Unable to connect to the database:', err)
   });
 
 

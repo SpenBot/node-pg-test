@@ -19,7 +19,7 @@ router.get('/api/courses', (req, res) => {
 router.get('/api/courses/:id', (req, res) => {
   CourseModel.findById(req.params.id)
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
-    .then(course => res.json(course.dataValues))
+    .then(course => res.json(course))
 })
 
 // GET ONE BY TITLE
@@ -41,7 +41,7 @@ router.post('/api/courses', (req, res) => {
     course_time: req.body.course_time
   })
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
-    .then(course => res.json(course.dataValues))
+    .then(course => res.json(course))
 })
 
 // UPDATE
@@ -57,7 +57,7 @@ router.put('/api/courses/:id', (req, res) => {
     }
   )
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
-    .then(course => res.json(course.dataValues))
+    .then(course => res.json(course))
 })
 
 // DELETE (hard delete)

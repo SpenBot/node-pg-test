@@ -44,32 +44,3 @@ INSERT INTO courses (title, room, course_time) VALUES
   ('Literature', '2B', '10:30'),
   ('Social Studies', '2C', '8:00'),
   ('Biology', '2D', '9:20');
-
--- ENROLLMENTS --------------------------------
-
-CREATE TABLE enrollments (
-  id SERIAL PRIMARY KEY,
-  course_id INT,
-  student_id INT,
-  FOREIGN KEY (course_id) REFERENCES courses(id),
-  FOREIGN KEY (student_id) REFERENCES students(id)
-);
-
-INSERT INTO enrollments (course_id, student_id) VALUES
-  (1, 1),
-  (2, 1),
-  (3, 1),
-  (1, 2),
-  (2, 2),
-  (1, 3),
-  (2, 3),
-  (3, 3),
-  (4, 4),
-  (5, 4),
-  (4, 5),
-  (5, 5),
-  (6, 6),
-  (6, 7),
-  (7, 7),
-  (7, 8),
-  (8, 8);

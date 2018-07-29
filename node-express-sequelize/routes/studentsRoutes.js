@@ -2,7 +2,6 @@
 
 const express = require('express')
 const router = express.Router()
-const Sequelize = require('sequelize');
 
 const StudentModel = require('../models/studentModel')
 
@@ -20,7 +19,7 @@ router.get('/api/students', (req, res) => {
 router.get('/api/students/:id', (req, res) => {
   StudentModel.findById(req.params.id)
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
-    .then(student => res.json(student.dataValues))
+    .then(student => res.json(student))
 })
 
 // GET ONE BY NAME
@@ -44,7 +43,7 @@ router.post('/api/students', (req, res) => {
     email: req.body.email
   })
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
-    .then(student => res.json(student.dataValues))
+    .then(student => res.json(student))
 })
 
 // UPDATE
@@ -61,7 +60,7 @@ router.put('/api/students/:id', (req, res) => {
     }
   )
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
-    .then(student => res.json(student.dataValues))
+    .then(student => res.json(student))
 })
 
 // DELETE (hard delete)

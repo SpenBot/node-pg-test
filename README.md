@@ -13,11 +13,11 @@
       # \c node_seq_test_db
 ```
 
-### Seeding the PostGres with Dummy Data:
+### Seeding the PostGres with Sequelize:
 
   - (in a separate CLI window) cd to root of this project, and run this js file
 ```  
-      $ node node-express-sequelize/migrations-temp/initialMigration.js
+      $ node node-express-sequelize/migrations-temp/initialSeed.js
 ```
   - (back in psql window) check if it worked
 ```  
@@ -25,7 +25,6 @@
       # SELECT * FROM students;
       # SELECT * FROM courses;
 ```
-
 
 ### Starting the Node-Express-Sequelize Backend :
 
@@ -68,14 +67,11 @@
   - uses pools to manage connections
 
 
-# FEATURES TO ADD
-
-
 
 # ISSUES
 
   - The biggest issue I ran into with Sequelize is that it makes it more difficult to do work in vanilla SQL.
   - If you create a table with constraints in SQL, Sequelize may not want to work with it.
   - If you create a table using Sequelize, it becomes harder to do INSERT/UPDATE in psql or pgAdmin.
-    + This could be primarily due to a bug with the createdAt and updatedAt columns that Sequelize auto-generates. One solution is to define those column manually, and disable default timestamps. 
+    + This could be primarily due to a bug with the createdAt and updatedAt columns that Sequelize auto-generates. One solution is to define those column manually, and disable default timestamps.
   - Basically, what happens is it pressures you to use one or the other, or do a bit of work-arounds in order to use both.
