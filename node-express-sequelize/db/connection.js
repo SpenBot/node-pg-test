@@ -12,12 +12,15 @@ const connection = new Sequelize(
   {
     dialect: 'postgres',
     pool:{max: config.MAX_CON, min: 0, acquire: 30000, idle: 10000}
+    // logging: false
   }
 )
 
-connection.authenticate()
+connection.validate({
+  logging: false
+})
   .then(() => {
-    console.log('\n\tConnection has been established successfully.\n')
+    console.log('\n\t >>> Connection to PostGres Database Successful \n')
   })
   .catch(err => {
     console.error('Unable to connect to the database:', err)

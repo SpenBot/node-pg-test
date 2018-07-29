@@ -32,10 +32,10 @@ CREATE TABLE courses (
   id SERIAL PRIMARY KEY,
   title VARCHAR NOT NULL,
   room VARCHAR NOT NULL,
-  class_time VARCHAR NOT NULL
+  course_time VARCHAR NOT NULL
 );
 
-INSERT INTO courses (title, room, class_time) VALUES
+INSERT INTO courses (title, room, course_time) VALUES
   ('English', '1A', '8:00'),
   ('Chemistry', '1B', '12:15'),
   ('History', '1C', '13:00'),

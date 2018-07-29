@@ -1,5 +1,6 @@
 # START UP
 
+
 ### Setting Up Local PostGres (on linux) :
 
   - sign in to postgres as default user
@@ -11,16 +12,18 @@
       # CREATE DATABASE node_seq_test_db;
       # \c node_seq_test_db
 ```
-  - now that you're signed in and created/connected to a db, run a seed file script with full path (path can be copied by right clicking in your text-editor usually)
-  - seed file is in 'postgres-db/seeds/seeds.sql'
+
+### Seeding the PostGres with Dummy Data:
+
+  - (in a separate CLI window) cd to root of this project, and run this js file
 ```  
-      # \i <full-path>/seeds.sql;
+      $ node node-express-sequelize/migrations-temp/initialMigration.js
 ```
-  - check if it worked, then quit
+  - (back in psql window) check if it worked
 ```  
       # \d
       # SELECT * FROM students;
-      # \q
+      # SELECT * FROM courses;
 ```
 
 
@@ -35,12 +38,23 @@
       $ node index.js
 ```
 
+
 ### Running Angular-Node
 
   - cd into the angular directory (again $ npm install)
 ```
       $ ng serve
 ```
+
+### Logging SQL Commands in Backend
+
+  - Sequelize by default logs the actual SQL commands it generates and executes using its models.
+  - Its annoying so I disabled them here.
+  - To view the logs there's only one line you should comment out :
+    + ./node-express-sequelize/db/connection.js
+    +  logging: false
+
+
 
 
 # FEATURES
@@ -53,38 +67,15 @@
   - uses sequelize ORM for postgres connection
   - uses pools to manage connections
 
+
 # FEATURES TO ADD
 
 
 
 # ISSUES
 
-
-
-
-
-# PLAN
-
-1.
-  - set up a local postgres
-  - populate postgres dummy data
-2.
-  - build node service
-  - connect to postgres
-  - build CRUD REST routes
-3.
-  - build angular front-end and test CRUD functionality.
-4.
-  - add join table to db
-  - add seed/dump files and data
-  - add psql users
-  - handle migrations, add models
-  - confirm connection pool stability, and database security
-  - handle validations
-5.
-  - deploy postgres to AWS
-  - deploy node and angular to AWS
-6.
-  - build docker container/images
-  - use docker to deploy to AWS
-  - use openshift to deploy docker container with github webhook
+  - The biggest issue I ran into with Sequelize is that it makes it more difficult to do work in vanilla SQL.
+  - If you create a table with constraints in SQL, Sequelize may not want to work with it.
+  - If you create a table using Sequelize, it becomes harder to do INSERT/UPDATE in psql or pgAdmin.
+    + This could be primarily due to a bug with the createdAt and updatedAt columns that Sequelize auto-generates. One solution is to define those column manually, and disable default timestamps. 
+  - Basically, what happens is it pressures you to use one or the other, or do a bit of work-arounds in order to use both.
