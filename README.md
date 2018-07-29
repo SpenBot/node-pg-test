@@ -73,31 +73,3 @@
       $ npm install -g nodemon
       $ nodemon index.js
 ```
-
-
-
-# PLAN
-
-1.
-  - set up a local postgres
-  - populate postgres dummy data
-2.
-  - build node service
-  - connect to postgres
-  - build CRUD REST routes
-3.
-  - build angular front-end and test CRUD functionality.
-4.
-  - add join table to db
-  - add seed/dump files and data
-  - add psql users
-  - handle migrations, add models
-  - confirm connection pool stability, and database security
-  - handle validations
-5.
-  - deploy postgres to AWS
-  - deploy node and angular to AWS
-6.
-  - build docker container/images
-  - use docker to deploy to AWS
-  - use openshift to deploy docker container with github webhook
