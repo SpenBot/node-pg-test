@@ -10,14 +10,14 @@ const config = require('../cfg/config.js')
 const connection = new Sequelize(
   config.POSTGRES_URL,
   {
-    dialect: 'postgres',
-    pool:{max: config.MAX_CON, min: 0, acquire: 30000, idle: 10000}
-    // logging: false
+    dialect: 'postgres', // this line is required for connection to work with postgres
+    pool:{max: config.MAX_CON, min: 0, acquire: 30000, idle: 10000},
+    logging: false // comment this out to console log the SQL sequelize executes
   }
 )
 
-connection.validate({
-  logging: false
+connection.authenticate({
+  logging: false // comment this out to console log the SQL sequelize executes
 })
   .then(() => {
     console.log('\n\t >>> Connection to PostGres Database Successful \n')

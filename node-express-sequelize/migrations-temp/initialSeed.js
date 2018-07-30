@@ -2,6 +2,7 @@
 const connection = require('../db/connection')
 const StudentModel = require('../models/studentModel')
 const CourseModel = require('../models/courseModel')
+// const EnrollmentModel = require('../models/enrollmentModel')
 
 
 
@@ -141,6 +142,79 @@ connection.sync({force: true})
         validate: true
       }
     )
+
+    // EnrollmentModel.bulkCreate(
+    //   [
+    //     {
+    //       course_id: 1,
+    //       student_id: 1
+    //     },
+    //     {
+    //       course_id: 2,
+    //       student_id: 1
+    //     },
+    //     {
+    //       course_id: 3,
+    //       student_id: 1
+    //     },
+    //     {
+    //       course_id: 1,
+    //       student_id: 2
+    //     },
+    //     {
+    //       course_id: 2,
+    //       student_id: 2
+    //     },
+    //     {
+    //       course_id: 2,
+    //       student_id: 3
+    //     },
+    //     {
+    //       course_id: 3,
+    //       student_id: 3
+    //     },
+    //     {
+    //       course_id: 4,
+    //       student_id: 4
+    //     },
+    //     {
+    //       course_id: 5,
+    //       student_id: 4
+    //     },
+    //     {
+    //       course_id: 4,
+    //       student_id: 5
+    //     },
+    //     {
+    //       course_id: 5,
+    //       student_id: 5
+    //     },
+    //     {
+    //       course_id: 6,
+    //       student_id: 6
+    //     },
+    //     {
+    //       course_id: 6,
+    //       student_id: 7
+    //     },
+    //     {
+    //       course_id: 7,
+    //       student_id: 7
+    //     },
+    //     {
+    //       course_id: 7,
+    //       student_id: 8
+    //     },
+    //     {
+    //       course_id: 8,
+    //       student_id: 8
+    //     }
+    //   ],
+    //   {
+    //     validate: true
+    //   }
+    // )
+
   })
   // .then(() => process.exit())
 

@@ -8,6 +8,7 @@ const StudentModel = require('../models/studentModel')
 
 //////// ROUTE CONTROLLER FUNCTIONS ////////
 
+
 // GET ALL
 router.get('/api/students', (req, res) => {
   StudentModel.findAll()
@@ -22,7 +23,7 @@ router.get('/api/students/:id', (req, res) => {
     .then(student => res.json(student))
 })
 
-// GET ONE BY NAME
+// GET ONE BY NAME (just an example)
 router.get('/api/students/name/:firstname/:lastname', (req, res) => {
   StudentModel.findOne({
     where: {
@@ -71,6 +72,16 @@ router.delete('/api/students/:id', (req, res) => {
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
     .then(student => res.json(student))
 })
+
+
+
+// ALTERNATIVE METHOD OF 'WHITE LISTING' PROPERTIES, SO ONLY PROPERTIES YOU WANT GET SET
+  // Student.create(req.body, {
+  //   fields: ['first_name', 'last_name', 'grade', 'email']
+  // })
+  //   .then((student) => res.json(student))
+
+
 
 
 //////// EXPORT MODULES ////////
