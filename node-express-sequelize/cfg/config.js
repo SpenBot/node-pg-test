@@ -14,9 +14,6 @@
         console.log(`\t\t ${key}: ${cfg[key]}`)
     }
 
-    console.log('\n')
-
-
     // export module
     module.exports = cfg
 

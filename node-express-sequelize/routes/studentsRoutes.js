@@ -3,6 +3,7 @@
 const express = require('express')
 const router = express.Router()
 
+const Sequelize = require('sequelize');
 const StudentModel = require('../models/studentModel')
 
 
@@ -54,7 +55,8 @@ router.put('/api/students/:id', (req, res) => {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       grade: req.body.grade,
-      email: req.body.email
+      email: req.body.email,
+      updated_at: Sequelize.literal('CURRENT_TIMESTAMP')
     },
     {
       where: {id: req.params.id}

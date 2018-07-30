@@ -3,7 +3,9 @@ const Sequelize = require('sequelize');
 const connection = require('../db/connection')
 
 const StudentModel = require('../models/studentModel')
-// const EnrollmentModel = require('../models/enrollmentModel')
+const EnrollmentModel = require('../models/enrollmentModel')
+
+
 
 //////// MODEL ////////
 
@@ -20,6 +22,20 @@ const CourseModel = connection.define("course",
     course_time: {
       type: Sequelize.STRING,
       allowNull: false
+    },
+    teacher_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    created_at: {
+      type: Sequelize.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.NOW,
+    },
+    updated_at: {
+      type: Sequelize.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.NOW,
     }
   },
   {
@@ -29,14 +45,13 @@ const CourseModel = connection.define("course",
 )
 
 
+
 //////// ASSOCIATIONS ////////
 
-// CourseModel.associate = function () {
-//   CourseModel.belongsToMany(StudentModel, {as: 'Courses', through: EnrollmentModel})
-// }
-CourseModel.associate = function () {
-  CourseModel.belongsToMany(StudentModel)
-}
+// CourseModel.belongsToMany(StudentModel, {foreignKey: 'course_id', through: EnrollmentModel})
+
+
+
 
 
 

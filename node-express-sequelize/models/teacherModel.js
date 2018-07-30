@@ -2,24 +2,14 @@
 const Sequelize = require('sequelize');
 const connection = require('../db/connection')
 
-const StudentModel = require('../models/studentModel')
-const CourseModel = require('../models/courseModel')
+const CourseModel = require('./courseModel')
 
 //////// MODEL ////////
 
-const EnrollmentModel = connection.define("enrollment",
+const TeacherModel = connection.define("teacher",
   {
-    id: {
-      type: Sequelize.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    course_id: {
-      type: Sequelize.INTEGER,
-      allowNull: false
-    },
-    student_id: {
-      type: Sequelize.INTEGER,
+    name: {
+      type: Sequelize.STRING,
       allowNull: false
     },
     created_at: {
@@ -34,17 +24,22 @@ const EnrollmentModel = connection.define("enrollment",
     }
   },
   {
-    timestamps: false
+    timestamps: false, // disable auto-generated timestamps
+    underscored: true // disables camelCase and uses course_id instead when referenced in other models
   }
 )
 
+
+//////// ASSOCIATIONS ////////
+
+TeacherModel.hasMany(CourseModel, {foreignKey: 'teacher_id'})
 
 
 
 
 //////// EXPORT MODULES ////////
 
-module.exports = EnrollmentModel
+module.exports = TeacherModel
 
 
 
