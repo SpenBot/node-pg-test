@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http'
 import { environment } from '../../../environments/environment'
 
 //////// IMPORT COMPONENTS /////////
-import { Student } from '../../models/studentModel'
+import { Student } from '../../schema/studentSchema'
 
 
 

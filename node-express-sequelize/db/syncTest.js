@@ -11,13 +11,11 @@ const EnrollmentModel = require('../models/enrollmentModel')
 //////// RUN STUDENT DATA SEED MIGRATION ////////
 
 connection.sync()
-
   .catch(err => console.log("Sequelize sync error:", err))
   .then(() => {
-    console.log("\n\t Sequelize Associations Sync \n")
+    console.log("\n\t >>> Sequelize Sync Test Successful \n")
     process.exit()
   })
-
 
 
 

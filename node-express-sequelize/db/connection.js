@@ -1,7 +1,7 @@
 //////// DEPENDENCIES, CONFIGURATIONS ////////
 
 const Sequelize = require('sequelize')
-const config = require('../cfg/config.js')
+const config = require('../config/config.js')
 
 
 
@@ -20,13 +20,8 @@ const connection = new Sequelize(
 connection.authenticate({
   logging: false // this stops console log of the SQL sequelize executes for authenticate()
 })
-  .then(() => {
-    console.log('\n\t >>> Connection to PostGres Database Successful \n')
-  })
-  .catch(err => {
-    console.log('Unable to connect to the database:', err)
-  });
-
+  .catch(err => console.log('Unable to connect to the database:', err))
+  .then(() => console.log('\n\t >>> Connection to PostGres Database Successful'))
 
 
 //////// EXPORT MODULE ////////

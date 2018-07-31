@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 
 //////// IMPORT SCHEMA CLASSES /////////
-import { Course } from '../../models/courseModel'
+import { Course } from '../../schemas/courseSchema'
 
 //////// IMPORT SERVICES /////////
 import { CoursesService } from '../../services/courses-service/courses.service'

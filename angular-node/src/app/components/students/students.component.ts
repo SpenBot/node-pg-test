@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //////// IMPORT SCHEMA CLASSES /////////
-import { Student } from '../../models/studentModel'
+import { Student } from '../../schemas/studentSchema'
 
 //////// IMPORT SERVICES /////////
 import { StudentsCombinedService } from '../../services/students-combined-service/students-combined.service'
@@ -40,7 +40,6 @@ export class StudentsComponent implements OnInit {
       .subscribe(students => {
         this.students = students
         this.setView()
-        console.log(this.students)
       })
   }
 

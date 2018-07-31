@@ -23,7 +23,7 @@ router.get('/api/courses/:id', (req, res) => {
     .then(course => res.json(course))
 })
 
-// GET ONE BY TITLE
+// GET ONE BY TITLE (just an example)
 router.get('/api/courses/name/:title', (req, res) => {
   CourseModel.findOne({
     where: {

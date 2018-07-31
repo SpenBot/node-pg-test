@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const config = require('./cfg/config.js')
+const config = require('./config/config.js')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -30,13 +30,15 @@ const studentsRoutes = require('./routes/studentsRoutes')
 const coursesRoutes = require('./routes/coursesRoutes')
 const enrollmentsRoutes = require('./routes/enrollmentsRoutes')
 const teachersRoutes = require('./routes/teachersRoutes')
-const studentsAssRoutes = require('./routes/studentsAssRoutes')
+const studentsCombinedRoutes = require('./routes/studentsCombinedRoutes')
+const coursesCombinedRoutes = require('./routes/coursesCombinedRoutes')
 
 app.use('/', studentsRoutes)
 app.use('/', coursesRoutes)
 app.use('/', enrollmentsRoutes)
 app.use('/', teachersRoutes)
-app.use('/', studentsAssRoutes)
+app.use('/', studentsCombinedRoutes)
+app.use('/', coursesCombinedRoutes)
 
 
 

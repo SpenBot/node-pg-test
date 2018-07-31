@@ -5,25 +5,30 @@ const router = express.Router()
 
 const Sequelize = require('sequelize');
 
-const StudentModel = require('../models/studentModel')
 const CourseModel = require('../models/courseModel')
+const StudentModel = require('../models/studentModel')
+
+
+
 
 
 //////// ROUTE CONTROLLER FUNCTIONS ////////
 
-
 // GET ALL
-router.get('/api/students-all', (req, res) => {
-  StudentModel.findAll({
+router.get('/api/courses-all', (req, res) => {
+  CourseModel.findAll({
     include: [
       {
-        model: CourseModel
+        model: StudentModel
       }
     ]
   })
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
-    .then(students => res.json(students))
+    .then(courses => res.json(courses))
 })
+
+
+
 
 
 //////// EXPORT MODULES ////////

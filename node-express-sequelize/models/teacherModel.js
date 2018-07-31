@@ -4,6 +4,9 @@ const connection = require('../db/connection')
 
 const CourseModel = require('./courseModel')
 
+
+
+
 //////// MODEL ////////
 
 const TeacherModel = connection.define("teacher",
@@ -28,6 +31,8 @@ const TeacherModel = connection.define("teacher",
     underscored: true // disables camelCase and uses course_id instead when referenced in other models
   }
 )
+
+
 
 
 //////// ASSOCIATIONS ////////
