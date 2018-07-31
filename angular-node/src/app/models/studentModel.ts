@@ -6,12 +6,17 @@ export class Student {
   grade: string;
   email: string;
 
+  enrollments: any[];
+
+  view: string;
+
   constructor () {
     this.id = null;
     this.first_name = '';
     this.last_name = '';
     this.grade = '';
     this.email = '';
+    this.enrollments = [];
   }
 
 }

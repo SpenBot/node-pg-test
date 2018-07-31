@@ -16,14 +16,14 @@ import { Student } from '../../models/studentModel'
 })
 
 
-
 //////// SERVICE CLASS ////////
-export class StudentsService {
+export class StudentsCombinedService {
 
   //// CONSTRUCTOR ////
   constructor(
     private http: HttpClient
   ) { }
+
 
   //// API ROUTE ////
   private URL = environment.nodeApiUrl
@@ -33,23 +33,23 @@ export class StudentsService {
 
   // GET ALL
   getStudents () : Observable<Student[]> {
-    return this.http.get<Student[]>(`${this.URL}/api/students`)
+    return this.http.get<Student[]>(`${this.URL}/api/students-all`)
   }
   // GET ONE
   getStudent (id: string) : Observable<Student> {
-    return this.http.get<Student>(`${this.URL}/api/students/${id}`)
+    return this.http.get<Student>(`${this.URL}/api/students-all/${id}`)
   }
   // CREATE
   addStudent (student: Student) : Observable<Student> {
-    return this.http.post<Student>(`${this.URL}/api/students`, student)
+    return this.http.post<Student>(`${this.URL}/api/students-all`, student)
   }
   // UPDATE
   updateStudent (student: Student) : Observable<Student> {
-    return this.http.put<Student>(`${this.URL}/api/students/${student.id}`, student)
+    return this.http.put<Student>(`${this.URL}/api/students-all/${student.id}`, student)
   }
   // DELETE
   deleteStudent (id: string) : Observable<Student> {
-    return this.http.delete<Student>(`${this.URL}/api/students/${id}`)
+    return this.http.delete<Student>(`${this.URL}/api/students-all/${id}`)
   }
 
 

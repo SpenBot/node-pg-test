@@ -1,27 +1,91 @@
-
+<!-- COMPONENT ALL -->
 <div class="students-comp">
 
+
+  <!-- COMPONENT HEADER -->
   <div class="students-header">
     <h3> All Students </h3>
     <div class="add-button" routerLink="/add-student"> + ADD NEW STUDENT </div>
   </div>
 
-  <div class="students-cols">
-    <h5> ID </h5>
-    <h5> NAME </h5>
-    <h5> GRADE </h5>
-    <h5> EMAIL </h5>
-  </div>
 
+
+  <!-- ALL STUDENTS CONTAINER -->
   <div *ngIf="students" class="students-container">
-    <div *ngFor="let student of students" class="students-li" routerLink="/students/{{student.id}}">
 
-      <p> {{student.id}} <p>
-      <p> {{student.first_name}} {{student.last_name}} </p>
-      <p> {{student.grade}} </p>
-      <p> {{student.email}} </p>
+    <!-- STUDENT LIST ITEM -->
+    <div *ngFor="let student of students"
+    class="students-li" #studentElement (click)="toggleSize(student)">
+
+
+      <!-- CONDESED VIEW -->
+      <div *ngIf="student.view === 'condensed'" class="condensedView">
+
+          <p>
+            <span style="font-weight: bold">STUDENT ID :</span>
+            {{student.id}}
+          <p>
+          <p>
+            <span style="font-weight: bold">NAME :</span>
+            {{student.first_name}} {{student.last_name}}
+          <p>
+          <p>
+            <span style="font-weight: bold">GRADE :</span>
+            {{student.grade}}
+          <p>
+
+      </div>
+
+
+      <!-- EXPANDED VIEW -->
+      <div *ngIf="student.view === 'expanded'" class="expandedView">
+
+          <img  src='assets/images/stan.png' alt="student"/>
+
+          <div class="expandedInfo">
+            <p>
+              <span style="font-weight: bold">STUDENT ID :</span>
+              {{student.id}}
+            <p>
+            <p>
+              <span style="font-weight: bold">NAME :</span>
+              {{student.first_name}} {{student.last_name}}
+            <p>
+            <p>
+              <span style="font-weight: bold">GRADE :</span>
+              {{student.grade}}
+            <p>
+            <p>
+              <span style="font-weight: bold">EMAIL :</span>
+              {{student.email}}
+            <p>
+            <div class="edit-button"  routerLink="/students/{{student.id}}"> EDIT STUDENT </div>
+          </div>
+
+          <div>
+            <p style="font-weight: bold"> CLASSES </p>
+            <div class="expandedCourses">
+              <div *ngFor="let course of student.courses" class="course-li">
+                <span style="font-weight: bold"> CLASS-ID: </span> {{course.course_id}}
+                <span style="font-weight: bold"> TITLE: </span> {{course.course_title}}
+                <span style="font-weight: bold"> ROOM: </span> {{course.course_room}}
+                <span style="font-weight: bold"> TIME: </span> {{course.course_time}}
+              </div>
+            </div>
+          </div>
+
+
+      </div>
+
+
+
 
     </div>
+
   </div>
 
+
 </div>
+
+
+<!-- END  -->
