@@ -30,15 +30,17 @@ const studentsRoutes = require('./routes/studentsRoutes')
 const coursesRoutes = require('./routes/coursesRoutes')
 const enrollmentsRoutes = require('./routes/enrollmentsRoutes')
 const teachersRoutes = require('./routes/teachersRoutes')
-const studentsCombinedRoutes = require('./routes/studentsCombinedRoutes')
-const coursesCombinedRoutes = require('./routes/coursesCombinedRoutes')
+
+const studentsAllDataRoutes = require('./routes/studentsAllDataRoutes')
+const coursesAllDataRoutes = require('./routes/coursesAllDataRoutes')
 
 app.use('/', studentsRoutes)
 app.use('/', coursesRoutes)
 app.use('/', enrollmentsRoutes)
 app.use('/', teachersRoutes)
-app.use('/', studentsCombinedRoutes)
-app.use('/', coursesCombinedRoutes)
+
+app.use('/', studentsAllDataRoutes)
+app.use('/', coursesAllDataRoutes)
 
 
 

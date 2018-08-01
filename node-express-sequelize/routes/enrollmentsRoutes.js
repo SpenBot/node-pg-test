@@ -5,9 +5,7 @@ const router = express.Router()
 
 const Sequelize = require('sequelize');
 
-const EnrollmentModel = require('../models/enrollmentModel')
-
-// const EnrollmentModel = require('../models-auto/enrollments')
+const EnrollmentModel = require('../models/models-index').EnrollmentModel
 
 
 //////// ROUTE CONTROLLER FUNCTIONS ////////
@@ -53,7 +51,9 @@ router.get('/api/enrollments/course/:course_id', (req, res) => {
 router.post('/api/enrollments', (req, res) => {
   EnrollmentModel.create({
     student_id: req.body.student_id,
-    course_id: req.body.course_id
+    course_id: req.body.course_id,
+    created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+    updated_at: Sequelize.literal('CURRENT_TIMESTAMP')
   })
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
     .then(enrollment => res.json(enrollment))

@@ -5,26 +5,16 @@ const router = express.Router()
 
 const Sequelize = require('sequelize');
 
-// const CourseModel = require('../models/courseModel')
-
-const connection = require('../db/connection')
+const CourseModel = require('../models/models-index').CourseModel
 
 
-const CourseModel = require('../models-auto/index-models').CourseModel
-const TeacherModel = require('../models-auto/index-models').TeacherModel
 
 
 //////// ROUTE CONTROLLER FUNCTIONS ////////
 
 // GET ALL
 router.get('/api/courses', (req, res) => {
-  CourseModel.findAll({
-    include: [
-      {
-        model: TeacherModel
-      }
-    ]
-  })
+  CourseModel.findAll()
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
     .then(courses => res.json(courses))
 })
@@ -52,7 +42,9 @@ router.post('/api/courses', (req, res) => {
   CourseModel.create({
     title: req.body.title,
     room: req.body.room,
-    course_time: req.body.course_time
+    course_time: req.body.course_time,
+    created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+    updated_at: Sequelize.literal('CURRENT_TIMESTAMP')
   })
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
     .then(course => res.json(course))

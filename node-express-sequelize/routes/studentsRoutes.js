@@ -5,9 +5,9 @@ const router = express.Router()
 
 const Sequelize = require('sequelize');
 
-const StudentModel = require('../models/studentModel')
+const StudentModel = require('../models/models-index').StudentModel
 
-// const StudentModel = require('../models-auto/students')
+
 
 
 //////// ROUTE CONTROLLER FUNCTIONS ////////
@@ -20,12 +20,14 @@ router.get('/api/students', (req, res) => {
     .then(students => res.json(students))
 })
 
+
 // GET ONE BY ID
 router.get('/api/students/:id', (req, res) => {
   StudentModel.findById(req.params.id)
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
     .then(student => res.json(student))
 })
+
 
 // GET ONE BY NAME (just an example)
 router.get('/api/students/name/:firstname/:lastname', (req, res) => {
@@ -39,17 +41,21 @@ router.get('/api/students/name/:firstname/:lastname', (req, res) => {
     .then(student => res.json(student))
 })
 
+
 // CREATE
 router.post('/api/students', (req, res) => {
   StudentModel.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     grade: req.body.grade,
-    email: req.body.email
+    email: req.body.email,
+    created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+    updated_at: Sequelize.literal('CURRENT_TIMESTAMP')
   })
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
     .then(student => res.json(student))
 })
+
 
 // UPDATE
 router.put('/api/students/:id', (req, res) => {
@@ -68,6 +74,7 @@ router.put('/api/students/:id', (req, res) => {
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))
     .then(student => res.json(student))
 })
+
 
 // DELETE (hard delete)
 router.delete('/api/students/:id', (req, res) => {

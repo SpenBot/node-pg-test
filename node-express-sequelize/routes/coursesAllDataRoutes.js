@@ -5,14 +5,9 @@ const router = express.Router()
 
 const Sequelize = require('sequelize');
 
-const CourseModel = require('../models/courseModel')
-const StudentModel = require('../models/studentModel')
-const TeacherModel = require('../models/teacherModel')
-
-// const CourseModel = require('../models-auto/courses')
-// const StudentModel = require('../models-auto/students')
-
-
+const CourseModel = require('../models/models-index').CourseModel
+const StudentModel = require('../models/models-index').StudentModel
+const TeacherModel = require('../models/models-index').TeacherModel
 
 
 
