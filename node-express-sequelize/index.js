@@ -19,7 +19,7 @@ const port = config.PORT
 app.set('port', port)
 
 app.listen(app.get('port'), () => {
-  console.log(`\n\t >>> Node-Postgres Server Running On PORT:${app.get('port')} \n` )
+  console.log(`\n\t >>> Node-Postgres Server Running On PORT:${app.get('port')}` )
 })
 
 

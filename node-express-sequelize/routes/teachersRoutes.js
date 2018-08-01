@@ -8,6 +8,9 @@ const Sequelize = require('sequelize');
 const TeacherModel = require('../models/teacherModel')
 const CourseModel = require('../models/courseModel')
 
+// const TeacherModel = require('../models-auto/teachers')
+// const CourseModel = require('../models-auto/courses')
+
 
 
 //////// ROUTE CONTROLLER FUNCTIONS ////////

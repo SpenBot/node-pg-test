@@ -7,6 +7,10 @@ const Sequelize = require('sequelize');
 
 const CourseModel = require('../models/courseModel')
 const StudentModel = require('../models/studentModel')
+const TeacherModel = require('../models/teacherModel')
+
+// const CourseModel = require('../models-auto/courses')
+// const StudentModel = require('../models-auto/students')
 
 
 
@@ -19,8 +23,11 @@ router.get('/api/courses-all', (req, res) => {
   CourseModel.findAll({
     include: [
       {
+        model: TeacherModel
+      },
+      {
         model: StudentModel
-      }
+      },
     ]
   })
     .catch(err => console.log('\n\t Error: Database Query Failed \n', err))

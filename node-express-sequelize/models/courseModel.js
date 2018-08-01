@@ -2,7 +2,7 @@
 const Sequelize = require('sequelize');
 const connection = require('../db/connection')
 
-
+const TeacherModel = require('./teacherModel')
 
 
 //////// MODEL ////////
@@ -42,6 +42,10 @@ const CourseModel = connection.define("course",
   }
 )
 
+//////// ASSOCIATIONS ////////
+
+CourseModel.belongsTo(TeacherModel, {foreignKey: 'teacher_id'})
+TeacherModel.hasMany(CourseModel, {foreignKey: 'teacher_id'})
 
 
 

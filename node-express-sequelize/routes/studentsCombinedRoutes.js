@@ -8,6 +8,9 @@ const Sequelize = require('sequelize');
 const StudentModel = require('../models/studentModel')
 const CourseModel = require('../models/courseModel')
 
+// const StudentModel = require('../models-auto/students')
+// const CourseModel = require('../models-auto/courses')
+
 
 
 

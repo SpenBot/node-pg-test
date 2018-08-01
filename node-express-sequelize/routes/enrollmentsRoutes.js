@@ -4,7 +4,10 @@ const express = require('express')
 const router = express.Router()
 
 const Sequelize = require('sequelize');
+
 const EnrollmentModel = require('../models/enrollmentModel')
+
+// const EnrollmentModel = require('../models-auto/enrollments')
 
 
 //////// ROUTE CONTROLLER FUNCTIONS ////////

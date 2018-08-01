@@ -37,7 +37,7 @@ const TeacherModel = connection.define("teacher",
 
 //////// ASSOCIATIONS ////////
 
-TeacherModel.hasMany(CourseModel, {foreignKey: 'teacher_id'})
+
 
 
 
