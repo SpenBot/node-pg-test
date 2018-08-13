@@ -18,7 +18,9 @@ const TeacherModel = require('./teachers')(connection, Sequelize)
 
 //////// VALIDATIONS AND HOOKS ////////
 
-
+// StudentModel.validate = {
+//   len: [3,6]
+// }
 
 
 
